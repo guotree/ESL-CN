@@ -37,6 +37,14 @@ p a:hover {
   color: red!important;
 }
 
+/* link in main doc */
+.md-typeset li a {
+  color: blue !important;
+}
+.md-typeset li a:hover {
+  color: red!important;
+}
+
 /* link in thead */
 th a {
   color: blue !important;
