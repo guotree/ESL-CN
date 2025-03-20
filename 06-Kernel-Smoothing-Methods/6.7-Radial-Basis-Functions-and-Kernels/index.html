@@ -3214,11 +3214,7 @@
 </tr>
 <tr>
 <td>更新</td>
-<td>2025-03-17</td>
-</tr>
-<tr>
-<td>状态</td>
-<td>Done</td>
+<td>2025-03-20</td>
 </tr>
 </tbody>
 </table>
@@ -3245,13 +3241,13 @@ f(x) &= \sum\limits_{j=1}^MK_{\lambda_j}(\xi_j,x)\beta_j\notag\\
 </script>
 </li>
 </ul>
-<p>​这个模型一般称为 RBF 网络，这是 S 型神经网络的替代选择，将在 <a href="../../11-Neural-Networks/11.1-Introduction/index.html">第 11 章</a> 讨论；$\xi_j$ 和 $\lambda_j$ 在参数中有重要作用．这个准则是有着多重局部最小点的非凸函数，并且优化的算法类似神经网络中的算法．</p>
+<p>​这个模型一般称为 RBF 网络，这是 S 型神经网络的替代选择，将在 <a href="../../11-Neural-Networks/11.1-Introduction/index.html">第 11 章</a> 讨论；$\xi_j$ 和 $\lambda_j$ 起到权重的作用．这个准则是有着多重局部最小点的非凸函数，并且优化的算法类似神经网络中的算法．</p>
 <ul>
-<li>分开估计 $\{\lambda_j,\xi_j\}$ 和 $\beta_j$．给定前者，后者的估计是简单的最小二乘问题．通常单独用 $X$ 的分布，以非监督的方式选择核参数 $\lambda_j$ 和 $\xi_j$．其中一种方式是在给定中心 $\xi_j$ 和缩放 $\lambda_j$ 时，对训练 $x_i$ 拟合高斯混合密度模型．一种特别的方式是使用聚类方法来确定原型 $\xi_j$，并且将 $\lambda_j=\lambda$ 看成是超参数．这些方式的显然缺点是条件分布 $\Pr(Y\mid X)$ 以及 $\E(Y\mid X)$ 对于 where the action is concentrated 是不起作用的．不过它们的优点是，可以更简单地实现．</li>
+<li>分开估计 $\{\lambda_j,\xi_j\}$ 和 $\beta_j$．给定前者，后者的估计是简单的最小二乘问题．通常单独用 $X$ 的分布，以非监督的方式选择核参数 $\lambda_j$ 和 $\xi_j$．其中一种方式是对训练 $x_i$ 拟合高斯混合密度模型，这样可以得到中心 $\xi_j$ 和缩放 $\lambda_j$．其它更<strong>临时 (adhoc)</strong> 的方式是使用聚类方法来确定原型 $\xi_j$，并且将 $\lambda_j=\lambda$ 看成是超参数．这些方式的显然缺点是条件分布 $\Pr(Y\mid X)$ 以及 $\E(Y\mid X)$ 在决定“主要作用集中在哪儿 (where the action is concentrated)” 时没有任何发言权．不过它们的优点是，可以更简单地实现．</li>
 </ul>
-<div class="admonition question">
-<p class="admonition-title">weiya 注：翻译相关</p>
-<p>原文的 <strong>不起作用 (having no say)</strong> 后面用 &ldquo;in where the action is concentrated&rdquo; 进行了修饰，但是不太清楚 &ldquo;action&rdquo; 是指什么，以及修饰语想表达什么？</p>
+<div class="admonition note">
+<p class="admonition-title">weiya 注：</p>
+<p>因为这些方式只用到 $X$ 的信息来决定 $\lambda_j$ 和 $\xi_j$，所以最后说它们的缺点是没有用到 $Y$ 的信息。</p>
 </div>
 <p><img alt="" src="../../img/06/fig6.16.png" /></p>
 <p>尽管看起来减少参数的个数，并假设 $\lambda_j=\lambda$ 为常数的方法很吸引人，但是这会带来糟糕的副作用——产生 <strong>洞 (holes)</strong>，也就是 $\IR^p$ 存在某个区域，其中没有核有合适的支撑（如图 6.16（上）所示）．对径向基函数重标准化，</p>
@@ -3392,7 +3388,7 @@ f(x)=\sum\limits_{i=1}^N\alpha_i K(x, x_i)\tag{5.50}\label{5.50}
         <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
         -->
-        Last Build Date UTC : 2025-03-17 15:59:20
+        Last Build Date UTC : 2025-03-20 14:52:11
       </div>
       
         
