@@ -3226,23 +3226,23 @@
 </script>
 和 \eqref{7.24} 式
 <script type="math/tex; mode=display">
-\E_{\mathbf y}(\Err_{in})=\E_{\mathbf y}(\overline{err})+2\cdot\frac{d}{N}\sigma_\varepsilon^2\tag{7.24}\label{7.24}
+\E_{\mathbf y}(\Err_{\text{in}})=\E_{\mathbf y}(\overline{\err})+2\cdot\frac{d}{N}\sigma_\varepsilon^2\tag{7.24}\label{7.24}
 </script>
 </p>
 </div>
 <p>样本内误差估计的一般形式为</p>
 <p>
 <script type="math/tex; mode=display">
-\widehat{\Err}_{in}=\overline{\err}+\hat\omega\tag{7.25}
+\widehat{\Err}_{\text{in}}=\overline{\err}+\hat\omega\tag{7.25}
 </script>
 </p>
-<p>其中 $\hat\omega$ 是 optimism 平均值的估计．</p>
+<p>其中 $\hat\omega$ 是 <strong>乐观偏差 (optimism)</strong> 平均值的估计．</p>
 <p>当在平方误差损失下拟合 $d$ 个参数后，是可以应用式 \eqref{7.24} 的；利用表达式 \eqref{7.24} 可以导出被称作 $C_p$ 的统计量
 <script type="math/tex; mode=display">
 C_p=\overline{\err}+2\cdot\frac{d}{N}\hat \sigma^2_\varepsilon\tag{7.26}
 </script>
 这里 $\hat\sigma_\varepsilon^2$ 是噪声方差的估计，由低偏差模型的均方误差得到．使用这个准则，我们用一个与使用的基函数个数成比例的因子来调节训练误差．</p>
-<p>当采用对数似然损失函数时，<strong>Akaike 信息准则 (Akaike information criterion)</strong> 是类似的但使用更普遍的 $\Err_{in}$ 的估计．它依赖于与 \eqref{7.24} 类似的关系式，在 $N\rightarrow \infty$ 渐近地有下式成立：
+<p>当采用对数似然损失函数时，<strong>Akaike 信息准则 (Akaike information criterion)</strong> 是类似的但使用更普遍的 $\Err_{\text{in}}$ 的估计．它依赖于与 \eqref{7.24} 类似的关系式，在 $N\rightarrow \infty$ 渐近地有下式成立：
 <script type="math/tex; mode=display">
 -2\cdot \E[\mathrm{log}\Pr\nolimits_{\hat \theta}(Y)]\approx -\frac{2}{N}\cdot \E[\mathrm{loglik}]+2\cdot\frac{d}{N}\tag{7.27}
 </script>
@@ -3254,7 +3254,7 @@ C_p=\overline{\err}+2\cdot\frac{d}{N}\hat \sigma^2_\varepsilon\tag{7.26}
 <script type="math/tex; mode=display">
 \mathrm{AIC}=-\frac{2}{N}\cdot \mathrm{loglik}+2\cdot \frac{d}N\tag{7.29}
 </script>
-对于高斯模型（假设方差 $\sigma_\varepsilon^2=\hat\sigma_\varepsilon^2$ 已知），AIC 统计量等于 $C_p$，因此我们称它们一起称为 AIC．</p>
+对于高斯模型（假设方差 $\sigma_\varepsilon^2=\hat\sigma_\varepsilon^2$ 已知），AIC 统计量等于 $C_p$，因此我们把它们一起称为 AIC．</p>
 <div class="admonition note">
 <p class="admonition-title">weiya 注：</p>
 <p>注意此处假设 $\sigma_\varepsilon^2$ 已知，如果也将其看成是未知的，并通过 MLE 求解，则 AIC 准则（忽略常数）为
@@ -3391,7 +3391,7 @@ C_p=\overline{\err}+2\cdot\frac{d}{N}\hat \sigma^2_\varepsilon\tag{7.26}
         <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
         -->
-        Last Build Date UTC : 2025-04-28 23:15:39
+        Last Build Date UTC : 2025-04-28 23:46:00
       </div>
       
         

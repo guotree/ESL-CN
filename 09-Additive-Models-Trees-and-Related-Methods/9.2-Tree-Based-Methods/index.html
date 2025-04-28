@@ -3579,7 +3579,7 @@ C_\alpha(T)=\sum\limits_{m=1}^{\vert T\vert}N_mQ_m(T)+\alpha\vert T\vert\tag{9.1
 <h3 id="_9">其他建树的过程<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <p>上面的讨论集中在 <strong>分类和回归树 (classification and regression tree, CART)</strong> 的实现．其他流行的方法是 ID3 和后来的版本，C4.5 和 C5.0（Quinlan, 1993<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>). 程序的早期版本只局限于类别型变量，而且采用自上而下没有剪枝的规则．经过最近的发展，C5.0 已经变得与 CART 很相似．C5.0 独有的最显著的特征是用于导出规则集的方案．树建成之后，定义终止结点的分割规则有时可以被简化：这就是，可以在不改变落入结点里面的观测时删掉一个或多个条件．最终我们得到定义每个终止结点的简化规则集；这些不再遵循树的结构，但是它们的简化可能使得它们更加吸引人们使用．</p>
 <h3 id="_10">线性组合分割<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
-<p>除了将分割限制成 $X_j\le s$ 的形式，还可以允许线性组合形式的分割 $\sum a_jX_j\le s$. 优化权重 $a_j$ 和分离点 $s$ 使得有关的准则最小（比如基尼指数）．尽管这个可以提高树的预测能力，但这也会损害解释性．计算上，分离点搜索的分离性妨碍了对权重的光滑优化．更好地结合线性组合分割的方式是在 <strong>专家系统混合模型 (hierarchical mixtures of experts, HME)</strong> 中，这是 <a href="../9.5-Hierarchical-Mixtures-of-Experts/index.html">9.5 节</a>的主题．</p>
+<p>除了将分割限制成 $X_j\le s$ 的形式，还可以允许线性组合形式的分割 $\sum a_jX_j\le s$. 优化权重 $a_j$ 和分离点 $s$ 使得有关的准则最小（比如基尼指数）．尽管这个可以提高树的预测能力，但这也会损害解释性．计算上，分离点搜索的分离性妨碍了对权重的光滑优化．更好地结合线性组合分割的方式是在 <strong>分层混合专家 (Hierarchical Mixtures of Experts, HME)</strong> 模型中，这是 <a href="../9.5-Hierarchical-Mixtures-of-Experts/index.html">9.5 节</a>的主题．</p>
 <h3 id="_11">树的不稳定性<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <p>树的一个主要问题是它们的高方差性．经常在数据中的一个小改动导致完全不同的分割点序列，使得解释不稳定．这种不稳定的主要原因是这个过程的层次性：上一个分割点的误差会传递到下面所有的分割点上．可以试图采取更加稳定的分离准则在某种程度上减轻这一影响，但是固有的不稳定性没有移除．这是从数据中估计一个简单的、基于树结构的代价．Bagging（<a href="../../08-Model-Inference-and-Averaging/8.7-Bagging/index.html">8.7 节</a>）对很多树进行平均来降低方差．</p>
 <h3 id="_12">缺乏光滑性<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
@@ -3756,7 +3756,7 @@ C_\alpha(T)=\sum\limits_{m=1}^{\vert T\vert}N_mQ_m(T)+\alpha\vert T\vert\tag{9.1
         <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
         -->
-        Last Build Date UTC : 2025-04-28 23:15:40
+        Last Build Date UTC : 2025-04-28 23:46:01
       </div>
       
         

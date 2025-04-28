@@ -3281,7 +3281,7 @@
 </tr>
 <tr>
 <td>更新</td>
-<td>2018-03-26</td>
+<td>2025-04-28</td>
 </tr>
 <tr>
 <td>状态</td>
@@ -3359,7 +3359,7 @@ D(\beta,\beta_0)=-\sum\limits_{i\in\cal M}y_i(x_i^T\beta+\beta_0),\tag{4.41}\lab
 <p>第二个问题经常通过不在原空间中寻找超平面消除，而在一个通过构造在原空间中变量的基函数变换得到的增广空间中．这类似于在多项式回归问题中为了将残差降为 0 而使得阶数特别大．完美的分离不总是可以达到：举个例子，如果来自两个类别的观测值有一个共同输入．当然或许也不需要完美分割，因为得到的模型很可能是过拟合从而不能很好地进行推广．我们将在下一节的最后回到这个问题的讨论．</p>
 <p>对于第一个问题的优雅解决方式是对分离超平面加上额外的约束条件．</p>
 <h2 id="452">4.5.2 最优分离超平面<a class="headerlink" href="#452" title="Permanent link">&para;</a></h2>
-<p>最优分离超平面将两个类别分离开且使得超平面到每一个类别最近点的距离最大 (Vapnik, 1996)<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>．这样不仅得到分离超平面问题的唯一解，而且通过使得在训练集上两个类别的<strong>边缘 (margin)</strong> 最大，这使得在测试集上有更好的分类表现．</p>
+<p>最优分离超平面将两个类别分离开且使得超平面到每一个类别最近点的距离最大 (Vapnik, 1996)<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>．这样不仅得到分离超平面问题的唯一解，而且通过使得在训练集上两个类别的<strong>间隔 (margin)</strong> 最大，这使得在测试集上有更好的分类表现．</p>
 <p>我们需要推广准则 $\eqref{4.41}$．考虑下面的优化问题</p>
 <p>
 <script type="math/tex; mode=display">
@@ -3392,7 +3392,7 @@ y_i(x_i^T\beta+\beta_0)\ge M\Vert\beta\Vert\tag{4.47}\label{4.47}
 \tag{4.48}\label{4.48}
 </script>
 </p>
-<p>根据 $\eqref{4.40}$，上面的约束条件定义了一个判别边界周围厚度为 $1/\Vert\beta\Vert$ 的<strong>平板 (slab)</strong> 或者<strong>空白 (margin)</strong>．因此我们选择 $\beta$ 和 $\beta_0$ 最大化厚度．这是一个凸优化问题（线性不等约束的二次准则）．Lagrange（原问题）函数关于 $\beta$ 和 $\beta_0$ 进行最小化是</p>
+<p>根据 $\eqref{4.40}$，上面的约束条件定义了一个判别边界周围厚度为 $1/\Vert\beta\Vert$ 的<strong>平板 (slab)</strong> 或者<strong>间隔 (margin)</strong>．因此我们选择 $\beta$ 和 $\beta_0$ 最大化厚度．这是一个凸优化问题（线性不等约束的二次准则）．Lagrange（原问题）函数关于 $\beta$ 和 $\beta_0$ 进行最小化是</p>
 <p>
 <script type="math/tex; mode=display">
 L_P=\frac{1}{2}\Vert\beta\Vert^2-\sum\limits_{i=1}^N\alpha_i[y_i(x_i^T\beta+\beta_0)-1]\tag{4.49}\label{4.49}
@@ -3598,7 +3598,7 @@ q(\lambda)\def\underset{x}{\inf}\cal L(x,\lambda)
         <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
         -->
-        Last Build Date UTC : 2025-04-28 23:15:38
+        Last Build Date UTC : 2025-04-28 23:45:59
       </div>
       
         
