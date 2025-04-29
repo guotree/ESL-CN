@@ -1624,8 +1624,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../09-Additive-Models-Trees-and-Related-Methods/9.4-MARS/index.html" title="9.4 多变量自适应回归样条" class="md-nav__link">
-      9.4 多变量自适应回归样条
+    <a href="../../09-Additive-Models-Trees-and-Related-Methods/9.4-MARS/index.html" title="9.4 多元自适应回归样条" class="md-nav__link">
+      9.4 多元自适应回归样条
     </a>
   </li>
 
@@ -3419,7 +3419,7 @@ f^{(3)}(x,y,z)&=\frac{1}{Z}\psi(x,y,z)
 <p class="admonition-title">weiya 注：Ex. 17.12</p>
 <p>已解决，详见 <a href="https://github.com/szcf-weiya/ESL-CN/issues/141">Issue 141: Ex. 17.12</a>.</p>
 </div>
-<p>预测矩阵 $\mathbf Z$ 有 $2^p$ 个行，以及 $1+p+p^2$ 个表征每个单元的列，尽管这个数字取决于图的稀疏程度．计算代价本质是该规模下回归问题的代价，即为 $O(p^42^p)$ 并且对于 $p &lt; 20$ 是可行的．<strong>牛顿更新 (Newton updates)</strong>一般通过 <strong>迭代重赋权最小二乘法 (iteratively reweighted least squares)</strong> 来计算，并且步数通常是在个位数之内．详见 Agresti (2002)<sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup> 和 McCullagh and Nelder(1989)<sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup>．标准软件（比如 <code>R</code> 语言的 <code>glm</code> 包）可以用来拟合这个模型．</p>
+<p>预测矩阵 $\mathbf Z$ 有 $2^p$ 个行，以及 $1+p+p^2$ 个表征每个单元的列，尽管这个数字取决于图的稀疏程度．计算代价本质是该规模下回归问题的代价，即为 $O(p^42^p)$ 并且对于 $p &lt; 20$ 是可行的．<strong>牛顿更新 (Newton updates)</strong>一般通过 <strong>迭代重加权最小二乘法 (iteratively reweighted least squares)</strong> 来计算，并且步数通常是在个位数之内．详见 Agresti (2002)<sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup> 和 McCullagh and Nelder(1989)<sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup>．标准软件（比如 <code>R</code> 语言的 <code>glm</code> 包）可以用来拟合这个模型．</p>
 <ul>
 <li>
 <p><strong>梯度下降 (Gradient descent)</strong> 至多需要 $O(p^22^{p-2})$ 的计算量来计算梯度，但是可能会比二阶牛顿法需要更多的梯度步数．然而，可以处理稍微大点的 $p\le 30$ 的问题．计算量可以通过（采用 junction-tree 算法）找出稀疏图中特别的团结构来降低．这里没有给出细节．</p>
@@ -3658,7 +3658,7 @@ x_{ij}\Pr\nolimits_{\cal\mathbf\Theta}(X_k=1\mid X_{\cal V}=x_{i\cal V})&\text{i
         <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
         -->
-        Last Build Date UTC : 2025-04-28 23:46:04
+        Last Build Date UTC : 2025-04-29 16:12:07
       </div>
       
         

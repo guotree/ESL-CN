@@ -1624,8 +1624,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../09-Additive-Models-Trees-and-Related-Methods/9.4-MARS/index.html" title="9.4 多变量自适应回归样条" class="md-nav__link">
-      9.4 多变量自适应回归样条
+    <a href="../../09-Additive-Models-Trees-and-Related-Methods/9.4-MARS/index.html" title="9.4 多元自适应回归样条" class="md-nav__link">
+      9.4 多元自适应回归样条
     </a>
   </li>
 
@@ -3334,7 +3334,7 @@
 </script>
 </p>
 </div>
-<p>这与式子 \eqref{18.11} 相对应．这个算法通过 <strong>坐标轮换 (cyclical coordinate descent)</strong>（<a href="../../03-Linear-Methods-for-Regression/3.8-More-on-the-Lasso-and-Related-Path-Algorithms/index.html">3.8.6 节</a>）计算出了在预先选择的 $\lambda$ 序列上的精确解，并且研究了 $p &gt; &gt; N$ 时解是稀疏的事实，以及 $\lambda$ 邻域的解趋向于非常相似的特点．这个方法用在表 18.1 的第 7 行中，通过交叉验证来选取全局调整参数 $\lambda$．它的表现与最优方法很相似，除了这里自动特征选择一起选择了 $269$ 个基因．类似的方法也用在了 Genkin et. al (2007)<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>；尽管他们从贝叶斯角度提出模型，但事实上他们计算 <strong>后验的众数 (posterior mode)</strong>，解决了惩罚的最大似然问题．</p>
+<p>这与式子 \eqref{18.11} 相对应．这个算法通过 <strong>循环坐标下降 (cyclical coordinate descent)</strong>（<a href="../../03-Linear-Methods-for-Regression/3.8-More-on-the-Lasso-and-Related-Path-Algorithms/index.html">3.8.6 节</a>）计算出了在预先选择的 $\lambda$ 序列上的精确解，并且研究了 $p &gt; &gt; N$ 时解是稀疏的事实，以及 $\lambda$ 邻域的解趋向于非常相似的特点．这个方法用在表 18.1 的第 7 行中，通过交叉验证来选取全局调整参数 $\lambda$．它的表现与最优方法很相似，除了这里自动特征选择一起选择了 $269$ 个基因．类似的方法也用在了 Genkin et. al (2007)<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>；尽管他们从贝叶斯角度提出模型，但事实上他们计算 <strong>后验的众数 (posterior mode)</strong>，解决了惩罚的最大似然问题．</p>
 <p><img alt="" src="../../img/18/fig18.5.png" /></p>
 <blockquote>
 <p>白血病数据的正则化逻辑斯蒂回归路径．左图是 lasso 路径，右图是 $\alpha=0.8$ 的弹性网路径．在路径的终端（最左端），lasso 有 19 个非零系数，弹性网有 39 个非零系数．弹性网的平均效应导致比 lasso 更多的非零系数，但是规模更小．</p>
@@ -3548,7 +3548,7 @@
         <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
         -->
-        Last Build Date UTC : 2025-04-28 23:46:04
+        Last Build Date UTC : 2025-04-29 16:12:08
       </div>
       
         

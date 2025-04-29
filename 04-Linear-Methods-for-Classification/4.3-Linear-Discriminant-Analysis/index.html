@@ -875,8 +875,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="正则化判别分析" class="md-nav__link">
-    正则化判别分析
+  <a href="#rda" title="正则化判别分析 (RDA)" class="md-nav__link">
+    正则化判别分析 (RDA)
   </a>
   
 </li>
@@ -889,7 +889,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" title="降维线性判别分析" class="md-nav__link">
+  <a href="#_1" title="降维线性判别分析" class="md-nav__link">
     降维线性判别分析
   </a>
   
@@ -1684,8 +1684,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../09-Additive-Models-Trees-and-Related-Methods/9.4-MARS/index.html" title="9.4 多变量自适应回归样条" class="md-nav__link">
-      9.4 多变量自适应回归样条
+    <a href="../../09-Additive-Models-Trees-and-Related-Methods/9.4-MARS/index.html" title="9.4 多元自适应回归样条" class="md-nav__link">
+      9.4 多元自适应回归样条
     </a>
   </li>
 
@@ -3233,8 +3233,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="正则化判别分析" class="md-nav__link">
-    正则化判别分析
+  <a href="#rda" title="正则化判别分析 (RDA)" class="md-nav__link">
+    正则化判别分析 (RDA)
   </a>
   
 </li>
@@ -3247,7 +3247,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" title="降维线性判别分析" class="md-nav__link">
+  <a href="#_1" title="降维线性判别分析" class="md-nav__link">
     降维线性判别分析
   </a>
   
@@ -3295,11 +3295,7 @@
 </tr>
 <tr>
 <td>更新</td>
-<td>2019-07-16 16:47:50</td>
-</tr>
-<tr>
-<td>状态</td>
-<td>Done</td>
+<td>2025-04-29</td>
 </tr>
 </tbody>
 </table>
@@ -3403,7 +3399,7 @@ x^T\hat{\boldsymbol\Sigma}^{-1}(\hat\mu_2-\hat\mu_1)>\frac{1}{2}(\hat\mu_2+\hat\
 <p>图 4.6. 拟合二次边界的两种方法．左图显示了图 4.1 的二次判别边界（在五维空间 $X_1,X_2,X_1X_2,X_1^2,X_2^2$ 中运用 LDA 得到）．右图显示了通过 QDA 寻找到的二次判别边界．两者差别很小，通常也是这种情况．</p>
 </blockquote>
 <p>QDA 的估计类似 LDA 的估计，除了协方差矩阵必须要按每一类来估计．当 $p$ 很大这意味着系数有显著性的增长．因为判别边界是系数密度的函数，参数的个数必须要考虑．对于 LDA，似乎有 $(K-1)\times(p+1)$ 个参数，因为我们仅仅需要判别函数之间的不同 $\delta_k(x)-\delta_K(x)$，其中 $K$ 是一些预先选好的类别（这里我们已经选了最后一类），每个差异需要 $p+1$ 个参数．对于 QDA 类似地，我们会有 $(K-1)\times \{p(p+3)/2+1\}$ 个参数．LDA 和 QDA 在非常大以及离散的数据集的分类上面表现得很好．举个例子，在 STATLOG 项目中 (Michie et al. 1994<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>) LDA 在 7 个数据集（总共 22 个数据集）中的表现排前三名，QDA 在四个数据集中排前三名，对于 10 个数据集两种方法的其中一种排前三名．两种方法都被广泛运用，整本书集中讨论 LDA．在各种外来方法风靡一时的今天，我们总是会有两种简单的方法可以使用．为什么 LDA 和 QDA 有那么好的效果？原因不可能是数据近似服从高斯分布，对于 LDA 协方差矩阵也不可能近似相等．很可能的一个原因是数据仅仅可以支持简单的判别边界比如线性和二次，并且通过高斯模型给出的估计是稳定的，这是一个偏差与方差之间的权衡——我们可以忍受线性判别边界的偏差因为它可以通过用比其它方法更低的方差来弥补．这个论点对于 QDA 更是不可想象，因为它自身有许多的参数，尽管或许比非参估计的参数要少．</p>
-<h2 id="_1">正则化判别分析<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="rda">正则化判别分析 (RDA)<a class="headerlink" href="#rda" title="Permanent link">&para;</a></h2>
 <p>Friedman (1989)<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> 提出 LDA 和 QDA 之间的一个权衡，使得 QDA 的协方差阵向 LDA 中的共同协方差阵收缩．这些方法非常类似岭回归．正则化协方差矩阵有如下形式
 <script type="math/tex; mode=display">
 \hat{\boldsymbol\Sigma}_k(\alpha)=\alpha\hat{\boldsymbol\Sigma}_k+(1-\alpha)\hat{\boldsymbol\Sigma}\tag{4.13}\label{4.13}
@@ -3413,7 +3409,7 @@ x^T\hat{\boldsymbol\Sigma}^{-1}(\hat\mu_2-\hat\mu_1)>\frac{1}{2}(\hat\mu_2+\hat\
 <blockquote>
 <p>图 4.7. 对元音数据应用一系列 $\alpha\in[0,1]$ 的正则化判别分析的测试和训练误差．测试数据的最优点发生在 $\alpha=0.9$ 附近，离二次判别分析很相近．</p>
 </blockquote>
-<p>图 4.7 显示了将 RDA 运用到元音数据的结果．训练和测试误差都随着 $\alpha$ 的增大获得了改善，尽管在 $\alpha=0.9$ 后测试误差急剧上升．训练和测试误差最大的区别部分因为在小数量的个体上有很多重复观测，在训练和测试集上是不同的．</p>
+<p>图 4.7 显示了将 <strong>正则化判别分析 (Regularized Discriminant Analysis, RDA)</strong> 运用到元音数据的结果．训练和测试误差都随着 $\alpha$ 的增大获得了改善，尽管在 $\alpha=0.9$ 后测试误差急剧上升．训练和测试误差最大的区别部分因为在小数量的个体上有很多重复观测，在训练和测试集上是不同的．</p>
 <p>类似的修改使得 $\hat\Sigma$ 向着标量协方差收缩，对于 $\gamma\in[0,1]$，有
 <script type="math/tex; mode=display">
 \hat{\boldsymbol\Sigma}(\gamma)=\gamma\hat{\boldsymbol\Sigma}+(1-\gamma)\hat{\sigma}^2\mathbf I.\tag{4.14}\label{4.14}
@@ -3431,7 +3427,7 @@ x^T\hat{\boldsymbol\Sigma}^{-1}(\hat\mu_2-\hat\mu_1)>\frac{1}{2}(\hat\mu_2+\hat\
 <li>对数据关于协方差矩阵 $\hat{\boldsymbol\Sigma}$ 球面化：$X^*\leftarrow \mathbf D^{-\frac{1}{2}}\mathbf U^T X$，其中 $\hat{\boldsymbol\Sigma}=\mathbf U\mathbf D\mathbf U^T$．$X^*$ 的共同协方差矩阵变为单位阵．</li>
 <li>考虑类别先验概率 $\pi_k$ 的影响，在变换后的空间里面分到最近的类别形心．</li>
 </ul>
-<h2 id="_2">降维线性判别分析<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_1">降维线性判别分析<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>至此我们已经讨论了限制为高斯分类器的 LDA．它受欢迎的部分原因是因为额外的限制使得我们可以看到数据在低维空间中富含信息的投影．</p>
 <p>在 $p$ 维输入空间的 $K$ 个形心位于维数 $\le K-1$ 的超平面子空间中，如果 $p$ 比 $K$ 大很多，维数上会有显著的降低．更多地，在确定最近的形心时，我们可以忽略到子空间的垂直距离，因为它们对每个类的作用同样大．因此我们可能仅仅需要将数据 $X^*$ 投射到形心张成的子空间 $H_{K-1}$ 中，并且在子空间内比较距离．因此在 LDA 中存在一个基础维数的降低，换句话说就是，我们仅仅需要考虑在维数至多为 $K-1$ 的子空间的数据．如果 $K=3$，举个例子，这允许我们可以在二维图中观察数据，对类别进行颜色编码．这样做我们不会丢失任何 LDA 分类需要的信息．</p>
 <div class="admonition note">
@@ -3508,7 +3504,7 @@ x^T\hat{\boldsymbol\Sigma}^{-1}(\hat\mu_2-\hat\mu_1)>\frac{1}{2}(\hat\mu_2+\hat\
 <blockquote>
 <p>图 4.10. 对于元音数据，训练和测试误差作为判别边界的维数的函数的图象．这种情况下最优的误差率是维数等于 2 的情况．图 4.11 显示了这个空间的判别边界．</p>
 </blockquote>
-<p>Fisher <strong>降秩判别分析 (RDA)</strong> 和指示响应矩阵回归之间存在着紧密的联系．事实表明 LDA 意味着先回归然后对 $\hat{\mathbf  Y}^T\mathbf Y$ 做特征值分解．在两个类的情形下，对于 $\hat{\mathbf Y}$ 的任一列，都存在一个单判别变量，乘上一个标量后能与该列相等．这些联系将在<a href="../../12-Support-Vector-Machines-and-Flexible-Discriminants/12.1-Introduction/index.html">第 12 章</a>中讨论．一个相关的事实是先将原始的预测变量 $\mathbf X$ 转换为 $\hat{\mathbf Y}$，然后用 $\hat{\mathbf Y}$ 做 LDA 与在原空间中做 LDA 是相同的（<a href="https://github.com/szcf-weiya/ESL-CN/issues/144">练习 4.3</a>）．</p>
+<p>Fisher <strong>降秩判别分析 (Reduced-Rank Discriminant Analysis)</strong> 和指示响应矩阵回归之间存在着紧密的联系．事实表明 LDA 意味着先回归然后对 $\hat{\mathbf  Y}^T\mathbf Y$ 做特征值分解．在两个类的情形下，对于 $\hat{\mathbf Y}$ 的任一列，都存在一个单判别变量，乘上一个标量后能与该列相等．这些联系将在<a href="../../12-Support-Vector-Machines-and-Flexible-Discriminants/12.1-Introduction/index.html">第 12 章</a>中讨论．一个相关的事实是先将原始的预测变量 $\mathbf X$ 转换为 $\hat{\mathbf Y}$，然后用 $\hat{\mathbf Y}$ 做 LDA 与在原空间中做 LDA 是相同的（<a href="https://github.com/szcf-weiya/ESL-CN/issues/144">练习 4.3</a>）．</p>
 <div class="admonition info">
 <p class="admonition-title">weiya 注：Ex. 4.3</p>
 <p>已解决，详见 <a href="https://github.com/szcf-weiya/ESL-CN/issues/144">Issue 144: Ex. 4.3</a>，欢迎讨论交流～</p>
@@ -3635,7 +3631,7 @@ x^T\hat{\boldsymbol\Sigma}^{-1}(\hat\mu_2-\hat\mu_1)>\frac{1}{2}(\hat\mu_2+\hat\
         <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
         -->
-        Last Build Date UTC : 2025-04-28 23:45:59
+        Last Build Date UTC : 2025-04-29 16:12:02
       </div>
       
         

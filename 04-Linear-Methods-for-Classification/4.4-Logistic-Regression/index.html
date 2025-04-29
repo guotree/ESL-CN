@@ -1698,8 +1698,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../09-Additive-Models-Trees-and-Related-Methods/9.4-MARS/index.html" title="9.4 多变量自适应回归样条" class="md-nav__link">
-      9.4 多变量自适应回归样条
+    <a href="../../09-Additive-Models-Trees-and-Related-Methods/9.4-MARS/index.html" title="9.4 多元自适应回归样条" class="md-nav__link">
+      9.4 多元自适应回归样条
     </a>
   </li>
 
@@ -3323,7 +3323,7 @@
 </tr>
 <tr>
 <td>更新</td>
-<td>2025-04-28</td>
+<td>2025-04-29</td>
 </tr>
 <tr>
 <td>状态</td>
@@ -3439,7 +3439,7 @@ x_{i+1}=x_i-\dfrac{f(x_i)}{f'(x_i)}
 <script type="math/tex; mode=display">
 \mathbf z=\mathbf X\beta^{old}+\mathbf{W^{-1}(y-p)}\tag{4.27}
 </script>
-有时也被称作 <strong>调整后的响应变量 (adjusted response)</strong>．重复地进行求解这些方程，每一次迭代时，$\mathbf p$ 改变，因此 $\mathbf W$ 和 $\mathbf z$ 也改变．这个算法被称作 <strong>加权迭代最小二乘 (iteratively reweighted least squares)</strong> 或者 IRLS，因为每次迭代求解加权最小二乘问题：
+有时也被称作 <strong>调整后的响应变量 (adjusted response)</strong>．重复地进行求解这些方程，每一次迭代时，$\mathbf p$ 改变，因此 $\mathbf W$ 和 $\mathbf z$ 也改变．这个算法被称作 <strong>迭代重加权最小二乘法 (iteratively reweighted least squares)</strong> 或者 IRLS，因为每次迭代求解加权最小二乘问题：
 <script type="math/tex; mode=display">
 \beta^{new}\leftarrow \arg\,\underset{\beta}{\min}(\mathbf z-\mathbf X\beta)^T\mathbf W(\mathbf z-\mathbf X\beta)\tag{4.28}
 </script>
@@ -3714,7 +3714,7 @@ z_i=x_i^T\hat\beta+\dfrac{y_i-\hat p_i}{\hat p_i(1-\hat p_i)}\tag{4.29}
         <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
         -->
-        Last Build Date UTC : 2025-04-28 23:45:59
+        Last Build Date UTC : 2025-04-29 16:12:02
       </div>
       
         

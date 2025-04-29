@@ -1637,8 +1637,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../09-Additive-Models-Trees-and-Related-Methods/9.4-MARS/index.html" title="9.4 多变量自适应回归样条" class="md-nav__link">
-      9.4 多变量自适应回归样条
+    <a href="../../09-Additive-Models-Trees-and-Related-Methods/9.4-MARS/index.html" title="9.4 多元自适应回归样条" class="md-nav__link">
+      9.4 多元自适应回归样条
     </a>
   </li>
 
@@ -3214,7 +3214,7 @@
 </tr>
 <tr>
 <td>更新</td>
-<td>2025-04-28</td>
+<td>2025-04-29</td>
 </tr>
 </tbody>
 </table>
@@ -3243,7 +3243,7 @@ f(x) &= \sum\limits_{j=1}^MK_{\lambda_j}(\xi_j,x)\beta_j\notag\\
 </ul>
 <p>​这个模型一般称为 RBF 网络，这是 S 型神经网络的替代选择，将在 <a href="../../11-Neural-Networks/11.1-Introduction/index.html">第 11 章</a> 讨论；$\xi_j$ 和 $\lambda_j$ 起到权重的作用．这个准则是有着多重局部最小点的非凸函数，并且优化的算法类似神经网络中的算法．</p>
 <ul>
-<li>分开估计 $\{\lambda_j,\xi_j\}$ 和 $\beta_j$．给定前者，后者的估计是简单的最小二乘问题．通常单独用 $X$ 的分布，以非监督的方式选择核参数 $\lambda_j$ 和 $\xi_j$．其中一种方式是对训练 $x_i$ 拟合高斯混合密度模型，这样可以得到中心 $\xi_j$ 和缩放 $\lambda_j$．其它更<strong>临时 (adhoc)</strong> 的方式是使用聚类方法来确定原型 $\xi_j$，并且将 $\lambda_j=\lambda$ 看成是超参数．这些方式的显然缺点是条件分布 $\Pr(Y\mid X)$ 以及 $\E(Y\mid X)$ 在决定“主要作用集中在哪儿 (where the action is concentrated)” 时没有任何发言权．不过它们的优点是，可以更简单地实现．</li>
+<li>分开估计 $\{\lambda_j,\xi_j\}$ 和 $\beta_j$．给定前者，后者的估计是简单的最小二乘问题．通常单独用 $X$ 的分布，以非监督的方式选择核参数 $\lambda_j$ 和 $\xi_j$．其中一种方式是对训练 $x_i$ 拟合高斯混合密度模型，这样可以得到中心 $\xi_j$ 和缩放 $\lambda_j$．其它更<strong>临时的 (adhoc)</strong> 方式是使用聚类方法来确定原型 $\xi_j$，并且将 $\lambda_j=\lambda$ 看成是超参数．这些方式的显然缺点是条件分布 $\Pr(Y\mid X)$ 以及 $\E(Y\mid X)$ 在决定“主要作用集中在哪儿 (where the action is concentrated)” 时没有任何发言权．不过它们的优点是，可以更简单地实现．</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">weiya 注：</p>
@@ -3388,7 +3388,7 @@ f(x)=\sum\limits_{i=1}^N\alpha_i K(x, x_i)\tag{5.50}\label{5.50}
         <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
         -->
-        Last Build Date UTC : 2025-04-28 23:46:00
+        Last Build Date UTC : 2025-04-29 16:12:03
       </div>
       
         

@@ -1624,8 +1624,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../09-Additive-Models-Trees-and-Related-Methods/9.4-MARS/index.html" title="9.4 多变量自适应回归样条" class="md-nav__link">
-      9.4 多变量自适应回归样条
+    <a href="../../09-Additive-Models-Trees-and-Related-Methods/9.4-MARS/index.html" title="9.4 多元自适应回归样条" class="md-nav__link">
+      9.4 多元自适应回归样条
     </a>
   </li>
 
@@ -3363,7 +3363,7 @@
 </tr>
 <tr>
 <td>更新</td>
-<td>2025-04-28</td>
+<td>2025-04-29</td>
 </tr>
 </tbody>
 </table>
@@ -3608,7 +3608,7 @@ m_j=\frac{\sum w_kx_k}{\sum w_k}\tag{14.48}\label{14.48}
 </script>
 </p>
 </div>
-<p>主曲面非常类似 <strong>自组织图 (self-organizing maps)</strong>．如果我们采用核曲面光滑器来估计坐标函数 $f_j(\lambda_1,\lambda_2)$，这与 SOMs 的 batch 版本 \eqref{14.48} 有着相同的形式．SOM 的权重 $w_k$ 恰恰是核的权重．然而，有一个区别，主曲面估计对每个数据点 $x_i$ 估计单独的原型 $f(\lambda_1(x_i),\lambda_2(x_i))$，而 SOM 会在所有数据中间共享一小部分的原型点．结果是，SOM 与主曲面仅仅当 SOM 原型的个数非常大时两者才一致．</p>
+<p>主曲面非常类似 <strong>自组织图 (self-organizing maps, SOM)</strong>．如果我们采用核曲面光滑器来估计坐标函数 $f_j(\lambda_1,\lambda_2)$，这与 SOMs 的 batch 版本 \eqref{14.48} 有着相同的形式．SOM 的权重 $w_k$ 恰恰是核的权重．然而，有一个区别，主曲面估计对每个数据点 $x_i$ 估计单独的原型 $f(\lambda_1(x_i),\lambda_2(x_i))$，而 SOM 会在所有数据中间共享一小部分的原型点．结果是，SOM 与主曲面仅仅当 SOM 原型的个数非常大时两者才一致．</p>
 <p>两者之间还有一个概念上的区别．主曲面给出了关于坐标函数的整个流形的光滑参量化，而 SOMs 是离散的并且仅仅产生近似数据的那些估计的原型．主曲面的光滑参量化保持局部的距离：在图 14.28 中，红色聚类点比绿色或蓝色聚类点更紧凑．</p>
 <div class="admonition note">
 <p class="admonition-title">weiya 注：Recall</p>
@@ -3882,7 +3882,7 @@ K(x,x')=\exp(-\Vert x-x'\Vert^2/c)\,\tag{14.67}
         <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
         -->
-        Last Build Date UTC : 2025-04-28 23:46:03
+        Last Build Date UTC : 2025-04-29 16:12:06
       </div>
       
         

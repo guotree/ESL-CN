@@ -1670,8 +1670,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../09-Additive-Models-Trees-and-Related-Methods/9.4-MARS/index.html" title="9.4 多变量自适应回归样条" class="md-nav__link">
-      9.4 多变量自适应回归样条
+    <a href="../../09-Additive-Models-Trees-and-Related-Methods/9.4-MARS/index.html" title="9.4 多元自适应回归样条" class="md-nav__link">
+      9.4 多元自适应回归样条
     </a>
   </li>
 
@@ -3344,7 +3344,7 @@ y_i^*=\hat\mu(x_i)+\varepsilon_i^*;\qquad \varepsilon_i^*\sim N(0,\hat\sigma^2);
 <p class="admonition-title">weiya 注：</p>
 <p>所以这个例子失败的原因还是因为对 voting label 进行 bagging？如果像上文所说的对 class probability 进行 bagging，是不是应该就没有这个问题了？</p>
 </div>
-<p>对于分类，我们可以就一个独立 <strong>弱学习器 (weak learners)</strong> 的共识来理解 bagging 的效应 (Dietterich, 2000a<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>)．令在两类别例子中 $x$ 处的贝叶斯最优边界为 $G(x)=1$．假设每个弱分类器 $G_b^*$ 的误差率为 $e_b=e&lt;0.5$，并令 $S_1(x)=\sum_{b=1}^BI(G_b^*=1)$ 是类别 $1$ 的 <strong>共识投票 (consensus vote)</strong>．因为弱分类器假设是独立的，则 $S_1(x)\sim B(B, 1-e)$，并且当 $B$ 变大时，$\Pr(S_1&gt;B/2)\rightarrow 1$．这个概念已经作为“Wisdom of Crowds”流行于统计学之外了 (Surowiecki, 2004<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>) ——多样且独立的人们的群体知识一般会超出任何单个的个体，而且可以用于投票．当然，最主要的警告是“独立”，但 bagged 树不是．图 8.11 说明了在模拟例子中 <strong>投票共识 (consensus vote)</strong> 的力量，其中只有 $30\%$ 的投票者对候选者有一些了解．</p>
+<p>对于分类，我们可以就一个独立 <strong>弱学习器 (weak learners)</strong> 的共识来理解 bagging 的效应 (Dietterich, 2000a<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>)．令在两类别例子中 $x$ 处的贝叶斯最优边界为 $G(x)=1$．假设每个弱分类器 $G_b^*$ 的误差率为 $e_b=e&lt;0.5$，并令 $S_1(x)=\sum_{b=1}^BI(G_b^*=1)$ 是类别 $1$ 的 <strong>共识投票 (consensus vote)</strong>．因为弱分类器假设是独立的，则 $S_1(x)\sim B(B, 1-e)$，并且当 $B$ 变大时，$\Pr(S_1&gt;B/2)\rightarrow 1$．这个概念已经作为“Wisdom of Crowds”流行于统计学之外了 (Surowiecki, 2004<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>) ——多样且独立的人们的群体知识一般会超出任何单个的个体，而且可以用于投票．当然，最主要的警告是“独立”，但 bagged 树不是．图 8.11 说明了在模拟例子中 <strong>共识投票 (consensus vote)</strong> 的力量，其中只有 $30\%$ 的投票者对候选者有一些了解．</p>
 <p><img alt="" src="../../img/08/fig8.11.png" /></p>
 <p><a href="../../15-Random-Forests/15.1-Introduction/index.html">第 15 章</a>中我们将看到随机森林通过降低被采样的树的相关性来改善bagging．</p>
 <p>注意到当我们 bag 一个模型时，模型中任何简单的结构都会丢失．举个例子，bagged 树不再是一棵树．对于模型的解释性来说，这显然是一个缺点．更稳定的过程，如最近邻，一般不会被 bagging 所影响．不幸的是，大都被 bagging 改善的不稳定的模型其实是不稳定的，因为对解释性的重视，而且这在 bagging 过程中会丧失掉．</p>
@@ -3466,7 +3466,7 @@ y_i^*=\hat\mu(x_i)+\varepsilon_i^*;\qquad \varepsilon_i^*\sim N(0,\hat\sigma^2);
         <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
         -->
-        Last Build Date UTC : 2025-04-28 23:46:01
+        Last Build Date UTC : 2025-04-29 16:12:04
       </div>
       
         
