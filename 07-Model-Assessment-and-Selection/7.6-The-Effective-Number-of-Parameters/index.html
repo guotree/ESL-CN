@@ -3214,11 +3214,7 @@
 </tr>
 <tr>
 <td>更新</td>
-<td>2019-07-27 18:07:50</td>
-</tr>
-<tr>
-<td>状态</td>
-<td>Done</td>
+<td>2025-04-29</td>
 </tr>
 </tbody>
 </table>
@@ -3234,7 +3230,7 @@
 \df(\mathbf S)=\trace(\mathbf S)\tag{7.32}\label{7.32}
 </script>
 </p>
-<p>是 $\mathbf S$ 对角元之和（也被称作 <strong>有效自由度 (effective degrees-of-freedom)</strong>）．注意到如果 $\mathbf S$ 为投影到由 $M$ 个特征张开的 <strong>基础集 (basis set)</strong> 上的正交投影矩阵，则 $\trace(\mathbf S)=M$．事实证明 $trace(\mathbf S)$ 恰巧是 $C_p$ 统计量 \eqref{7.26} 替换掉 $d$ 作为参数个数的那个值．</p>
+<p>是 $\mathbf S$ 对角元之和（也被称作 <strong>有效自由度 (effective degrees of freedom)</strong>）．注意到如果 $\mathbf S$ 为投影到由 $M$ 个特征张开的 <strong>基础集 (basis set)</strong> 上的正交投影矩阵，则 $\trace(\mathbf S)=M$．事实证明 $trace(\mathbf S)$ 恰巧是 $C_p$ 统计量 \eqref{7.26} 替换掉 $d$ 作为参数个数的那个值．</p>
 <div class="admonition note">
 <p class="admonition-title">weiya 注： Recall</p>
 <p>
@@ -3243,7 +3239,7 @@ C_p=\overline{\err}+2\cdot\frac{d}{N}\hat \sigma^2_\varepsilon\tag{7.26}\label{7
 </script>
 </p>
 </div>
-<p>如果 $\mathbf y$ 是从加性误差模型 $Y=f(X)+\varepsilon$ 中产生的，$\Var(\varepsilon)=\sigma_\epsilon^2$，则可以证明 $\sum_{i=1}^N\Cov(\hat y_i,y_i)=\trace(\mathbf S)\sigma_{\varepsilon}^2$，导出了更一般的定义</p>
+<p>如果 $\mathbf y$ 是从可加误差模型 $Y=f(X)+\varepsilon$ 中产生的，$\Var(\varepsilon)=\sigma_\epsilon^2$，则可以证明 $\sum_{i=1}^N\Cov(\hat y_i,y_i)=\trace(\mathbf S)\sigma_{\varepsilon}^2$，导出了更一般的定义</p>
 <p>
 <script type="math/tex; mode=display">
 \df(\hat {\mathbf y})=\frac{\sum_{i=1}^N\Cov(\hat y_i,y_i)}{\sigma_\varepsilon^2}\tag{7.33}
@@ -3264,7 +3260,19 @@ C_p=\overline{\err}+2\cdot\frac{d}{N}\hat \sigma^2_\varepsilon\tag{7.26}\label{7
 \df(\alpha)=\sum\limits_{i=1}^M\frac{\theta_m}{\theta_m+\alpha}\tag{7.34}\label{7.34}
 </script>
 </p>
-<p>其中 $\theta_m$ 是Hessian矩阵$\partial^2R(w)/\partial w\partial w^T$的特征值．如果我们对解的误差函数做二次近似便可由式 \eqref{7.32} 导出式 \eqref{7.34} (Bishop，1995<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>)</p>
+<p>其中 $\theta_m$ 是 Hessian 矩阵 $\partial^2R(w)/\partial w\partial w^T$ 的特征值．如果我们对解的误差函数做二次近似便可由式 \eqref{7.32} 导出式 \eqref{7.34} (Bishop，1995<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>)</p>
+<div class="admonition info">
+<p class="admonition-title">weiya 注：</p>
+<p>更多关于自由度的讨论，推荐阅读</p>
+<ul>
+<li>Tibshirani, R. J. (2015). Degrees of freedom and model search. Statistica Sinica, 25(3), 1265–1296.</li>
+<li>Chen, X., Lin, Q., &amp; Sen, B. (2020). On degrees of freedom of projection estimators with applications to multivariate nonparametric regression. Journal of the American Statistical Association, 115(529), 173–186. <a href="https://doi.org/10.1080/01621459.2018.1537917">https://doi.org/10.1080/01621459.2018.1537917</a></li>
+</ul>
+<p>本人也有一篇讨论自由度的文章</p>
+<ul>
+<li>Wang, L., Zhao, H., &amp; Fan, X. (2024). Degrees of Freedom: Search Cost and Self-consistency. Journal of Computational and Graphical Statistics, 0(0), 1–23. <a href="https://doi.org/10.1080/10618600.2024.2388545">https://doi.org/10.1080/10618600.2024.2388545</a></li>
+</ul>
+</div>
 <div class="footnote">
 <hr />
 <ol>
@@ -3377,7 +3385,7 @@ C_p=\overline{\err}+2\cdot\frac{d}{N}\hat \sigma^2_\varepsilon\tag{7.26}\label{7
         <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
         -->
-        Last Build Date UTC : 2025-04-29 16:12:03
+        Last Build Date UTC : 2025-04-29 16:26:05
       </div>
       
         
