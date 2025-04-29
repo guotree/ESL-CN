@@ -3345,7 +3345,7 @@
 </table>
 <p>通过保留一部分预测变量而丢弃剩余的变量，<strong>子集选择 (subset selection)</strong> 可得到一个可解释的、预测误差可能比全模型低的模型．然而，因为这是一个离散的过程（变量不是保留就是丢弃），所以经常表现为高方差，因此不会降低全模型的预测误差．而<strong>收缩方法 (shrinkage methods)</strong> 更加连续，因此不会受 <strong>高易变性 (high variability)</strong> 太大的影响．</p>
 <h2 id="_1">岭回归<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p><strong>岭回归 (Ridge regression)</strong> 根据回归系数的大小加上惩罚因子对它们进行收缩．岭回归的系数使得带惩罚的残差平方和最小</p>
+<p><strong>岭回归 (ridge regression)</strong> 根据回归系数的大小加上惩罚因子对它们进行收缩．岭回归的系数使得带惩罚的残差平方和最小</p>
 <p>
 <script type="math/tex; mode=display">
 \hat{\beta}^{ridge}=\underset{\beta}{\arg\min}\Big\{\sum\limits_{i=1}^N(y_i-\beta_0-\sum\limits_{j=1}^px_{ij}\beta_j)^2+\lambda\sum\limits_{j=1}^p\beta_j^2\Big\}\tag{3.41}\label{3.41}
@@ -3432,7 +3432,7 @@
 > 则$\lambda=\frac{\sigma^2}{\tau^2}$,且岭回归估计是后验分布的众数．
 -->
 
-<p>中心化输入矩阵 $\mathbf{X}$ 的 <strong>奇异值分解 (SVD)</strong> 让我们进一步了解了岭回归的本质．这个分解在许多统计方法分析中非常有用．$N\times p$ 阶矩阵 $\mathbf{X}$ 的 SVD 分解有如下形式</p>
+<p>中心化输入矩阵 $\mathbf{X}$ 的 <strong>奇异值分解 (singular value decomposition, SVD)</strong> 让我们进一步了解了岭回归的本质．这个分解在许多统计方法分析中非常有用．$N\times p$ 阶矩阵 $\mathbf{X}$ 的 SVD 分解有如下形式</p>
 <p>
 <script type="math/tex; mode=display">
 \mathbf{X=UDV^T}\tag{3.45}\label{3.45}
@@ -3626,7 +3626,7 @@ O&O
 <p>图3.13 $q=1.2$ 时 $\sum_j\vert\beta_j\vert^q$ 为常数值的轮廓线（左图）以及 $\alpha=0.2$ 时弹性网惩罚 $\sum_j(\alpha\beta_j^2+(1-\alpha)\vert\beta_j\vert)$ 为常数值的轮廓线（右图）．尽管看起来很相似，弹性网有尖角（不可导），而 $q=1.2$ 的惩罚不会有尖角．</p>
 </blockquote>
 <h2 id="_2">最小角回归<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p><strong>最小角回归 (LAR)</strong> 是相对较新的方法 (Efron et al., 2004<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>)，而且可以看成是一种向前逐步回归（3.3.2 节）的“民主 (democratic)”版本．正如我们将看到的，LAR 与 lasso 联系紧密，并且事实上提供了如图 3.10 所示的计算整个 lasso 路径的非常有效的算法．</p>
+<p><strong>最小角回归 (least angle regression, LAR)</strong> 是相对较新的方法 (Efron et al., 2004<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>)，而且可以看成是一种向前逐步回归（3.3.2 节）的“民主 (democratic)”版本．正如我们将看到的，LAR 与 lasso 联系紧密，并且事实上提供了如图 3.10 所示的计算整个 lasso 路径的非常有效的算法．</p>
 <div class="admonition note">
 <p class="admonition-title">weiya 注：</p>
 <p>在 Efron 的论文中，最小角回归缩写为 LARS，我们这里仍以 ESL 书上的缩写为准——LAR</p>
@@ -3861,7 +3861,7 @@ R(\beta)=\frac{1}{2}\Vert\mathbf y-\mathbf X\beta\Vert_2^2+\lambda\Vert\beta\Ver
         <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
         -->
-        Last Build Date UTC : 2025-04-29 16:26:03
+        Last Build Date UTC : 2025-04-29 23:07:20
       </div>
       
         

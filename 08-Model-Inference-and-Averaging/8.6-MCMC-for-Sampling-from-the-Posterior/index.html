@@ -3214,11 +3214,7 @@
 </tr>
 <tr>
 <td>更新</td>
-<td>2017-12-27, 2018-07-17</td>
-</tr>
-<tr>
-<td>状态</td>
-<td>Done</td>
+<td>2025-04-29</td>
 </tr>
 </tbody>
 </table>
@@ -3226,7 +3222,7 @@
 <p class="admonition-title">更新笔记</p>
 <p>@2017-12-27 若 $r\sim U[0,1]$，则 $\Pr(r &lt; c)=c$，其中 $c$ 为常值．</p>
 </div>
-<p>在定义了一个贝叶斯模型后，有人便想要从得到的后验分布中采样来对参数进行推断．除了简单的模型，这通常是一个很困难的计算问题．</p>
+<p>在定义了一个贝叶斯模型后，便需要从得到的后验分布中采样来对参数进行推断．除了简单的模型，这通常是一个很困难的计算问题．</p>
 <div class="admonition note">
 <p class="admonition-title">weiya 注</p>
 <p>在贝叶斯分析中，计算后验分布时经常涉及复杂的积分运算，比如
@@ -3244,7 +3240,7 @@
 但一般很难从联合分布中采样出样本来。幸好可以通过构造一个 Markov chain 来进行 Monte Carlo 近似，称为 MCMC．在 <a href="http://nbviewer.jupyter.org/github/szcf-weiya/MonteCarlo/blob/master/MCMC/MCMC_example.ipynb">MCMC_example.ipynb</a> 里面用一个例子说明了怎么用 MCMC 得到参数的后验分布．
 更多 Monte Carlo 方法的细节可以参见 <a href="https://mc.hohoweiya.xyz/">Notes: Monte-Carlo</a>.</p>
 </div>
-<p>这节我们讨论用于后验采样的 <strong>马尔科夫蒙特卡洛法 (Markov chain Monte Carlo)</strong>．我们将要看到吉布斯采样（一个 MCMC 过程）与 EM 算法非常相关：主要的区别在于前者从条件分布中采样而非对它们最大化．</p>
+<p>这节我们讨论用于后验采样的 <strong>马尔科夫蒙特卡洛法 (Markov chain Monte Carlo)</strong>．我们将要看到<strong>吉布斯采样 (Gibbs sampling)</strong>（一种 MCMC 过程）与 EM 算法非常相关：主要的区别在于前者从条件分布中采样而非对它们最大化．</p>
 <p>首先考虑下面的抽象问题．我们有随机变量 $U_1,U_2,\ldots,U_K$，而且希望从他们的联合分布中采样．假设这很难实现，但是从条件分布 $\Pr(U_j\mid U_1,U_2,\ldots,U_{j-1},U_{j+1},\ldots,U_K),j=1,\ldots,K$ 中模拟是非常简单的．吉布斯采样过程也可以从他们的每个分布来模拟，而且当这个过程稳定下来，吉布斯采样得到了需要的联合分布中的一个样本．这个过程表现在算法 8.3 中．</p>
 <p><img alt="" src="../../img/08/alg8.3.png" /></p>
 <div class="admonition note">
@@ -3256,7 +3252,7 @@
 <script type="math/tex; mode=display">
 \widehat{\Pr}_{U_k}(u)=\frac{1}{(M-m+1)}\sum\limits_{t=m}^M\Pr(u\mid U_\ell^{(t)},\ell\neq k)\tag{8.50}
 </script>
-这里我们对序列的 $M-m+1$ 个成员平均，使得达到平稳之前允许初始的“<strong>老化 (burn-in)</strong>”期．</p>
+这里我们对序列的 $M-m+1$ 个成员平均，使得达到平稳之前允许初始的“<strong>预热 (burn-in)</strong>”期．</p>
 <div class="admonition info">
 <p class="admonition-title">weiya 注：</p>
 <p>已解决，详见 <a href="https://github.com/szcf-weiya/ESL-CN/issues/145">Issue 145: Ex. 8.3</a>．</p>
@@ -3383,7 +3379,7 @@ L(\theta,\mathbf{Z,\Delta}) = \prod\limits_{i=1}^n[(1-\pi)\phi_{\theta_1}(y_i)]^
         <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
         -->
-        Last Build Date UTC : 2025-04-29 16:26:05
+        Last Build Date UTC : 2025-04-29 23:07:23
       </div>
       
         

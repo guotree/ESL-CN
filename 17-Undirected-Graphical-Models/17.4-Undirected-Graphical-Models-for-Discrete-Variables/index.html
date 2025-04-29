@@ -3422,10 +3422,10 @@ f^{(3)}(x,y,z)&=\frac{1}{Z}\psi(x,y,z)
 <p>预测矩阵 $\mathbf Z$ 有 $2^p$ 个行，以及 $1+p+p^2$ 个表征每个单元的列，尽管这个数字取决于图的稀疏程度．计算代价本质是该规模下回归问题的代价，即为 $O(p^42^p)$ 并且对于 $p &lt; 20$ 是可行的．<strong>牛顿更新 (Newton updates)</strong>一般通过 <strong>迭代重加权最小二乘法 (iteratively reweighted least squares)</strong> 来计算，并且步数通常是在个位数之内．详见 Agresti (2002)<sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup> 和 McCullagh and Nelder(1989)<sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup>．标准软件（比如 <code>R</code> 语言的 <code>glm</code> 包）可以用来拟合这个模型．</p>
 <ul>
 <li>
-<p><strong>梯度下降 (Gradient descent)</strong> 至多需要 $O(p^22^{p-2})$ 的计算量来计算梯度，但是可能会比二阶牛顿法需要更多的梯度步数．然而，可以处理稍微大点的 $p\le 30$ 的问题．计算量可以通过（采用 junction-tree 算法）找出稀疏图中特别的团结构来降低．这里没有给出细节．</p>
+<p><strong>梯度下降 (gradient descent)</strong> 至多需要 $O(p^22^{p-2})$ 的计算量来计算梯度，但是可能会比二阶牛顿法需要更多的梯度步数．然而，可以处理稍微大点的 $p\le 30$ 的问题．计算量可以通过（采用 junction-tree 算法）找出稀疏图中特别的团结构来降低．这里没有给出细节．</p>
 </li>
 <li>
-<p><strong>迭代比例过滤 (Iterative proportional fitting, IPF)</strong> 在梯度式 \eqref{17.34} 中采用 <strong>循环坐标下降 (cyclical coordinate descent)</strong>．每一步更新一个参数使得梯度等式正好为 0．循环进行直到所有梯度为 0．一个完整的周期与梯度赋值花费同样的计算量，但是可能更有效．Jirouśek and Přeučil (1995)<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup> 采用 junction trees 实现了 IPF 的一个有效版本．</p>
+<p><strong>迭代比例过滤 (iterative proportional fitting, IPF)</strong> 在梯度式 \eqref{17.34} 中采用 <strong>循环坐标下降 (cyclical coordinate descent)</strong>．每一步更新一个参数使得梯度等式正好为 0．循环进行直到所有梯度为 0．一个完整的周期与梯度赋值花费同样的计算量，但是可能更有效．Jirouśek and Přeučil (1995)<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup> 采用 junction trees 实现了 IPF 的一个有效版本．</p>
 </li>
 </ul>
 <p>当 $p$ 变大 $(&gt;30)$ 可以采用其它的方法来近似梯度</p>
@@ -3469,7 +3469,7 @@ x_{ij}\Pr\nolimits_{\cal\mathbf\Theta}(X_k=1\mid X_{\cal V}=x_{i\cal V})&\text{i
 <p>第二个篇文章提出近似的解法，类似对于高斯图模型的 Meinshausen and Bühlmann (2006)<sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup> 的方法．它们将每个结点看成其他结点的函数的 $L_1$ 惩罚逻辑斯蒂回归，接着以某种方式对称边的参数．举个例子，如果 $\hat\theta_{jk}$ 为从输出变量为结点 $j$ 的逻辑斯蒂回归模型中得到的 $j$-$k$ 边参数的估计，“最小”的对称化设定 $\hat\theta_{jk}$ 为 $\tilde\theta_{jk}$ 或 $\tilde\theta_{kj}$ 中绝对值最小的，类似地定义“最大”准则．他们证明在确定条件下，随着样本大小变为无穷大，两种近似都能估计正确的非零边．Hoefling and Tibshirani(2008)<sup id="fnref:10"><a class="footnote-ref" href="#fn:10">10</a></sup> 将 graphical lasso 应用到离散马尔科夫网络，得到比共轭梯度稍快的过程，但是依旧必须处理 $\E_{\mathbf\Theta}(X_jX_k)$ 的计算．他们也在大量的模拟研究中比较了精确解和近似解，并且发现“最小”和“最大”近似仅仅比精确解略微不精确，对于估计非零边和估计边参数的真实值都是这样，而且快很多．此外，他们可以处理稠密图的情形，因为他们不需要计算 $\E_{\mathbf\Theta}(X_jX_k)$.</p>
 <p>最后，我们指出高斯和二值模型的关键区别．在高斯情况下，$\mathbf\Sigma$ 和其逆经常都是感兴趣的，而且 graphical lasso 过程都实现了这两个的估计．然而，Meinshausen and Bühlmann (2006)<sup id="fnref2:9"><a class="footnote-ref" href="#fn:9">9</a></sup> 对于高斯图模型的近似类似 Wainwright et al. (2007)<sup id="fnref2:8"><a class="footnote-ref" href="#fn:8">8</a></sup> 对二值情形的近似，却仅仅得到 $\mathbf\Sigma^{-1}$ 的估计．相反地，在二值数据的马尔科夫模型中，$\mathbf\Theta$ 是我们感兴趣的，而它的逆不是我们感兴趣的．Wainwright et al. (2007)<sup id="fnref3:8"><a class="footnote-ref" href="#fn:8">8</a></sup> 近似的方法有效地估计 $\mathbf\Theta$，因此是二值问题的吸引人的解决方案．</p>
 <h2 id="_4">限制玻尔兹曼机<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>这节我们考虑受神经网络影响的一种特殊的图模型结构，该结构中，单元是按层进行组织的．<strong>限制玻尔兹曼机 (RBM)</strong> 包含一层可见单元和一层隐藏单元，单层之间没有联系．如果隐藏单元的连接被移除掉，计算条件期望变得很简单（如在式 \eqref{17.37} 和 \eqref{17.38}）．</p>
+<p>这节我们考虑受神经网络影响的一种特殊的图模型结构，该结构中，单元是按层进行组织的．<strong>限制玻尔兹曼机 (restricted Boltzmann machine, RBM)</strong> 包含一层可见单元和一层隐藏单元，单层之间没有联系．如果隐藏单元的连接被移除掉，计算条件期望变得很简单（如在式 \eqref{17.37} 和 \eqref{17.38}）．</p>
 <div class="admonition note">
 <p class="admonition-title">weiya 注：<p>这样 \eqref{17.38} 式变成，对于观测 $i$，
 <script type="math/tex; mode=display">
@@ -3492,7 +3492,7 @@ x_{ij}\Pr\nolimits_{\cal\mathbf\Theta}(X_k=1\mid X_{\cal V}=x_{i\cal V})&\text{i
 </p>
 <p><img alt="" src="../../img/17/fig17.6.png" /></p>
 <blockquote>
-<p>图 17.6. 同一层中的结点没有连接的 <strong>限制玻尔兹曼机 (RBM)</strong>．可见单元细分成了 $\cal V_1$ 和 $\cal V_2$，允许 RBM 建立特征 $\cal V_1$ 和标签 $\cal V_2$ 之间的联合密度．</p>
+<p>图 17.6. 同一层中的结点没有连接的 <strong>限制玻尔兹曼机 (restricted Boltzmann machine, RBM)</strong>．可见单元细分成了 $\cal V_1$ 和 $\cal V_2$，允许 RBM 建立特征 $\cal V_1$ 和标签 $\cal V_2$ 之间的联合密度．</p>
 </blockquote>
 <p>举个例子， $\cal V_1$ 可以是手写字体图像的二值像素，$\cal V_2$ 可以有10个单元，每个单元是观测的类别标签 0-9 中的一个．</p>
 <p>这个模型的约束形式简化了估计 \eqref{17.37} 中期望的吉布斯采样，因为每一层的变量在给定其它层中的变量时相互独立．因此它们可以采用由式 \eqref{17.30} 给出的条件概率一起取样．</p>
@@ -3658,7 +3658,7 @@ x_{ij}\Pr\nolimits_{\cal\mathbf\Theta}(X_k=1\mid X_{\cal V}=x_{i\cal V})&\text{i
         <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
         -->
-        Last Build Date UTC : 2025-04-29 16:26:09
+        Last Build Date UTC : 2025-04-29 23:07:26
       </div>
       
         

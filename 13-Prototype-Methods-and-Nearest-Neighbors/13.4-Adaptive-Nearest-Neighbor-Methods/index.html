@@ -3283,10 +3283,6 @@
 <td>更新</td>
 <td>2025-04-29</td>
 </tr>
-<tr>
-<td>状态</td>
-<td>Done</td>
-</tr>
 </tbody>
 </table>
 <p>当在高维特征空间中做最近邻分类时，最近邻的点可以离得非常远，带来偏差，并且降低了分类器的效果．</p>
@@ -3323,7 +3319,7 @@ F_1(\mathrm{median}(R))=\frac 12
 <p><img alt="" src="../../img/13/fig13.13.png" /></p>
 <p>图中有两个特征，并且用圆形区域画出了 <strong>查询点 (query point)</strong> 的最近邻．最近邻分类的隐含假设是类别概率在邻域内近似为常值，因此简单的平均会得到不错的估计．然而，在这个例子中，只有水平方向上的类别概率会变化．如果我们提前知道这一点，可以将邻居拉伸为长方形区域．这会降低估计的偏差，同时保持方差不变．</p>
 <p>一般地，这要求最近邻分类中采用自适应的度量，使得得到的邻域沿着类别不会改变太多的方向上拉伸．在高维特征空间中，类别概率可能仅仅只在一个低维的子空间中有所改变，因此自适应度量是很重要的优点．</p>
-<p>Friedman (1994a)<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> 提出通过逐步剔除包含训练数据的盒子的边来自动寻找长方形邻域．这里我们介绍  Hastie and Tibshirani (1996a)<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> 提出的 <strong>判别自适应最近邻 (discriminant adaptive nearest-neighbor) (DANN)</strong>．更早的研究中，相关的方法有 Short and Fukunaga (1981)<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup> 和 Myles and Hand (1990)<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>.</p>
+<p>Friedman (1994a)<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> 提出通过逐步剔除包含训练数据的盒子的边来自动寻找长方形邻域．这里我们介绍  Hastie and Tibshirani (1996a)<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> 提出的 <strong>判别自适应最近邻 (discriminant adaptive nearest-neighbor, DANN)</strong>．更早的研究中，相关的方法有 Short and Fukunaga (1981)<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup> 和 Myles and Hand (1990)<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>.</p>
 <p>在每个查询点，构造其大小为 50 个点的邻域，并且用这些点的类别分布来决定怎么对邻域进行变形——也就是，对度量进行更新．接着更新后的度量用在该查询点的最近邻规则中．因此每一个查询点都可能采用不同的度量．</p>
 <p>在图 13.13 中，很明显邻域应当沿着垂直类别重心连线的方向拉伸．这个方向也与线性判别边界重合，而且是类别概率改变最少的方向．一般地，类别概率变化最大的方向不会与类别重心连线垂直（见 <a href="../../04-Linear-Methods-for-Classification/4.3-Linear-Discriminant-Analysis/index.html">4.3 节</a> 的图 4.9）．</p>
 <div class="admonition note">
@@ -3335,7 +3331,7 @@ F_1(\mathrm{median}(R))=\frac 12
 <p>类别概率变化最大的方向应该是指图 4.9 右边密度曲线的横轴方向，它不与类别重心连线垂直，而左图沿着垂直方向的密度曲线会矮很多，从而变化也没有右边的大。</p>
 </div>
 <p>假设一个局部判别模型，局部 <strong>类别内 (within-)</strong> 和 <strong>类别间 (between-)</strong> 协方差矩阵的信息就足以确定邻居的最优形状．</p>
-<p><strong>判别自适应最近邻 (DANN)</strong> 在查询点 $x_0$ 的度量定义为 </p>
+<p><strong>判别自适应最近邻 (discriminant adaptive nearest-neighbor, DANN)</strong> 在查询点 $x_0$ 的度量定义为 </p>
 <p>
 <script type="math/tex; mode=display">
 D(x,x_0)=(x-x_0)^T\bSigma(x-x_0)\,,\tag{13.8}\label{13.8}
@@ -3506,7 +3502,7 @@ D(x,x_0)=(x-x_0)^T\bSigma(x-x_0)\,,\tag{13.8}\label{13.8}
         <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
         -->
-        Last Build Date UTC : 2025-04-29 16:26:07
+        Last Build Date UTC : 2025-04-29 23:07:25
       </div>
       
         

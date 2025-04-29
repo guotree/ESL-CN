@@ -3311,13 +3311,13 @@ f(x)=\alpha_0+\sum\limits_{T_k\in \cal T}\alpha_kT_k(x)\tag{16.8}
 <p>图 16.6 展示了 lasso post-processing 对随机森林（蓝色曲线）有了较大程度的改善，并且将森林降至了 $40$ 棵树，而不是原来的 $1000$ 棵．这个 post-processed 表现与 gradient boosting 相当．橘黄色曲线展示了修改版的随机森林，它是为了更大程度上降低树之间的相关性．这里训练样本 $5\%$ 的子样本（无放回）用来生成每棵树，并且每棵树限制得很低（大约 6 个终止结点）．这种情形下 post-processing 有更显著的改善，而且训练花费大概降低了 $100$ 倍．然而，这个 post-processed 模型的表现有点比蓝色曲线差．</p>
 <h2 id="_1">学习一个好的集成<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>并非所有的集成 $\cal T_L$ 采用 post-processing 都表现得很好．采用基函数，我们想要一个能够覆盖所需要的空间的集合，为了保证有效性，post-processor 彼此之间应显著不同．</p>
-<p>Friedman and Popescu (2003)<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup> 从 <strong>数值积分 (numerical quadrature)</strong> 和 <strong>重要性采样 (importance sampling)</strong> 中获得启发．他们将未知的函数看成如下的积分</p>
+<p>Friedman and Popescu (2003)<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup> 从 <strong>数值积分 (numerical quadrature)</strong> 和 <strong>重要度采样 (importance sampling)</strong> 中获得启发．他们将未知的函数看成如下的积分</p>
 <p>
 <script type="math/tex; mode=display">
 f(x)=\int\beta(\gamma)b(x;\gamma)d\gamma\tag{16.10}
 </script>
 </p>
-<p>其中 $\gamma\in \Gamma$ 对基函数 $b(x;\gamma)$ 进行了编号．举个例子，如果基函数为树，则 $\gamma$ 索引了分离变量、分离点以及终止结点里面的值．<strong>数值积分 (numerical quadrature)</strong> 意味着寻找 $M$ 个赋值点 $\gamma_m\in\Gamma$ 的集合，以及对应的权重 $\alpha_m$ 使得 $f_M(x)=\alpha_0+\sum\limits_{m=1}^M\alpha_mb(x;\gamma_m)$ 在 $x$ 的定义域内近似 $f(x)$．<strong>重要度采样 (Importance Sampling)</strong> 意味着随机对 $\gamma$ 采样，但是对于空间 $\Gamma$ 的相关区域赋予更大的权重．Friedman and Popescu (2003)<sup id="fnref3:1"><a class="footnote-ref" href="#fn:1">1</a></sup> 建议采用损失函数 \eqref{16.9} 来衡量相关性（的缺失）：</p>
+<p>其中 $\gamma\in \Gamma$ 对基函数 $b(x;\gamma)$ 进行了编号．举个例子，如果基函数为树，则 $\gamma$ 索引了分离变量、分离点以及终止结点里面的值．<strong>数值积分 (numerical quadrature)</strong> 意味着寻找 $M$ 个赋值点 $\gamma_m\in\Gamma$ 的集合，以及对应的权重 $\alpha_m$ 使得 $f_M(x)=\alpha_0+\sum\limits_{m=1}^M\alpha_mb(x;\gamma_m)$ 在 $x$ 的定义域内近似 $f(x)$．<strong>重要度采样 (importance sampling)</strong> 意味着随机对 $\gamma$ 采样，但是对于空间 $\Gamma$ 的相关区域赋予更大的权重．Friedman and Popescu (2003)<sup id="fnref3:1"><a class="footnote-ref" href="#fn:1">1</a></sup> 建议采用损失函数 \eqref{16.9} 来衡量相关性（的缺失）：</p>
 <p>
 <script type="math/tex; mode=display">
 Q(\gamma)=\underset{c_0,c_1}{\min}\sum\limits_{i=1}^NL(y_i, c_0+c_1b(x_i;\gamma))\tag{16.11}
@@ -3516,7 +3516,7 @@ R_6(X) &= I(X_1\ge 2.1)\cdot I(X_3\in\{S\})\cdot I(X_7\ge 4.5)
         <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
         -->
-        Last Build Date UTC : 2025-04-29 16:26:09
+        Last Build Date UTC : 2025-04-29 23:07:26
       </div>
       
         

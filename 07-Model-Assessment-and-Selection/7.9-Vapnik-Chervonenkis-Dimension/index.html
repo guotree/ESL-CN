@@ -3301,7 +3301,7 @@
 <p>已解决，详见 <a href="https://github.com/szcf-weiya/ESL-CN/issues/130">Issue 130: Ex. 7.8</a>.</p>
 </div>
 <p>目前我们仅仅讨论了指示函数的 VC 维，但这个可以推广到实值函数中．实值函数类 $\{g(x,\alpha)\}$ 的 VC 维定义为指示类 $\{I(g(x,\alpha)-\beta &gt; 0)\}$ 的 VC 维，其中 $\beta$ 在 $g$ 的值域中取值．</p>
-<p>可以使用 VC 维来构造（样本外）预测误差的估计；不同类型的结果都是可以的．当使用函数类时，采用 VC 维的概念，可以证明训练误差的 <strong>乐观 (optimisim)</strong> 的结果．这样的结果的例子如下．如果我们采用 VC 维为 $h$ 的类函数 $\{f(x,\alpha)\}$ 来拟合 $N$ 个训练点，于是在训练集上至少以 $1-\eta$ 的概率成立下式：</p>
+<p>可以使用 VC 维来构造（样本外）预测误差的估计；不同类型的结果都是可以的．当使用函数类时，采用 VC 维的概念，可以证明训练误差的 <strong>乐观偏差 (optimisim)</strong> 的结果．这样的结果的例子如下．如果我们采用 VC 维为 $h$ 的类函数 $\{f(x,\alpha)\}$ 来拟合 $N$ 个训练点，于是在训练集上至少以 $1-\eta$ 的概率成立下式：</p>
 <p>
 <script type="math/tex; mode=display">
 \begin{align}
@@ -3327,7 +3327,7 @@
 </p>
 </div>
 <p>然而，\eqref{7.46} 结果更强：不是给出每个固定函数 $f(x,\alpha)$ 的 optimism 的期望值，而是给出对于所有函数 $f(x,\alpha)$ 的概率上限，也因此可以对函数类进行搜索．</p>
-<p>Vapnik 的 <strong>结构风险最小化 (SRM, structural risk minimization)</strong> 方法拟合嵌套的 VC 维递增 $h_1 &lt; h_2 &lt; \cdots$ 的模型序列，接着选择有最小上界的模型．</p>
+<p>Vapnik 的 <strong>结构风险最小化 (structural risk minimization, SRM)</strong> 方法拟合嵌套的 VC 维递增 $h_1 &lt; h_2 &lt; \cdots$ 的模型序列，接着选择有最小上界的模型．</p>
 <p>我们注意到类似 \eqref{7.46} 中的上界通常是非常不精确的，但是这并不会妨碍它们成为模型选择的良好准则，其中相对（不是绝对）的测试误差的大小是重要的．这种方法的主要不足是计算类函数的 VC 维的困难．通常只能得到粗糙的 VC 维上界，这可能不是充分的．结构风险最小化程序可以成功运行的例子是支持向量分类器，将在 <a href="../../12-Support-Vector-Machines-and-Flexible-Discriminants/12.2-The-Support-Vector-Classifier/index.html">12.2 节</a>讨论．</p>
 <h2 id="_1">例子（继续）<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="../../img/07/fig7.7.png" /></p>
@@ -3456,7 +3456,7 @@
         <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
         -->
-        Last Build Date UTC : 2025-04-29 16:26:05
+        Last Build Date UTC : 2025-04-29 23:07:22
       </div>
       
         

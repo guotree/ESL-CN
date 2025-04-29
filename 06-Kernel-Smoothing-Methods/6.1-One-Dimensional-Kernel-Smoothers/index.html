@@ -3397,7 +3397,7 @@ K_\lambda(x_0,x)=D\left(\frac{\vert x-x_0\vert}{h_\lambda(x_0)}\right)\tag{6.5}
 </p>
 <div class="admonition note">
 <p class="admonition-title">weiya 注</p>
-<p><strong>广义最小二乘估计 (GLSE)</strong>
+<p><strong>广义最小二乘估计 (generalized least squares estimation, GLSE)</strong>
 线性模型为
 <script type="math/tex; mode=display">
 \mathbf{Y=X}\beta+e,\; \E(e)=0,\; \Cov(e)=\sigma^2\mathbf\Sigma
@@ -3410,7 +3410,7 @@ $\beta$ 估计为
 <script type="math/tex; mode=display">
 \Cov(e)=\diag(\sigma_1^2,\cdots,\sigma^2_n)
 </script>
-有<strong>加权最小二乘估计 (WLSE)</strong></p>
+有<strong>加权最小二乘估计 (weighted least squares estimation, WLSE)</strong></p>
 </div>
 <p>等式 \eqref{6.8} 给出了局部线性回归估计的显式表达，式 \eqref{6.9} 强调了估计关于 $y_i$ 为线性的（$l_i(x_0)$ 不涉及 $\mathbf y$）．这些权重 $l_i(x_0)$ 结合了核 $K_\lambda(x_0,\cdot)$ 和最小二乘估计，并且有时称作 <strong>等价核 (equivalent kernel)</strong>．图 6.4 说明了局部线性回归在等价核上的影响．从历史上看，Nadaraya–Watson 和其他局部平均核方法中的偏差是通过修改核本身进行纠正．这些修改基于理论渐近的均方误差，不仅很复杂，而且只对有限样本进行近似．局部线性回归自动地修改核将偏差矫正到恰好为一阶，这是被称为 <strong>自动核作品 (automatic kernel carpentry)</strong> 的现象．</p>
 <div class="admonition info">
@@ -3564,7 +3564,7 @@ $\beta$ 估计为
         <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
         -->
-        Last Build Date UTC : 2025-04-29 16:26:04
+        Last Build Date UTC : 2025-04-29 23:07:22
       </div>
       
         
