@@ -3335,7 +3335,7 @@
 </tr>
 <tr>
 <td>更新</td>
-<td>2018-03-22, 2018-03-23, 2018-03-24</td>
+<td>2025-09-23</td>
 </tr>
 <tr>
 <td>状态</td>
@@ -3725,7 +3725,7 @@ R(\beta)=\frac{1}{2}\Vert\mathbf y-\mathbf X\beta\Vert_2^2+\lambda\Vert\beta\Ver
 <p>图 3.16 将 LAR 和 lasso 与向前逐步（forward stepwise）和向前逐渐（forward stagewise）回归进行比较．设定与图 3.6 是相同的，除了这里的 $N=100$ 而不是 $300$，所以这个问题更加困难．我们可以看到增长性更快的向前逐步很快地过拟合（10 个变量加入模型中之前是很好的），最终比增长性较慢的向前逐渐回归表现得更差．LAR 和 lasso 的行为与向前逐渐回归相似．增长的向前逐渐回归与 LAR 和 lasso 类似，并且将在 <a href="../../03-Linear-Methods-for-Regression/3.8-More-on-the-Lasso-and-Related-Path-Algorithms/index.html">3.8.1 节</a>中描述．</p>
 <h3 id="lar-lasso">LAR 和 Lasso 自由度公式<a class="headerlink" href="#lar-lasso" title="Permanent link">&para;</a></h3>
 <p>假设我们通过最小角回归过程拟合了线性模型，在某步 $k &lt; p$ 停止，或者等价地用 lasso 的界 $t$ 得到约束情况下的全最小二乘拟合．我们需要多少参数，或者自由度？</p>
-<p>首先考虑采用 $k$ 个特征的子集的线性回归．如果这个子集是没有通过训练数据而事先确定好的，然后在该拟合模型中的自由度定义为$k$．当然，在经典统计学中，线性独立参数的个数也就是自由度．另外地，假设我们用一个最优子集选择确定了最优的 $k$ 个预测变量．于是结果模型中有 $k$ 个参数，但在某种意义上我们用了大于 $k$ 个的自由度．</p>
+<p>首先考虑采用 $k$ 个特征的子集的线性回归．如果这个子集是没有通过训练数据而事先确定好的，然后在该拟合模型中的自由度定义为 $k$．当然，在经典统计学中，线性独立参数的个数也就是自由度．另外地，假设我们用一个最优子集选择确定了最优的 $k$ 个预测变量．于是结果模型中有 $k$ 个参数，但在某种意义上我们用了大于 $k$ 个的自由度．</p>
 <p>我们需要一个对于自适应拟合模型的有效自由度的一般定义．我们定义拟合向量 $\hat{\mathbf y}=(\hat y_1,\hat y_2,\ldots,\hat y_N)$ 的自由度为
 <script type="math/tex; mode=display">
 \df(\hat{\mathbf y})=\frac{1}{\sigma^2}\sum\limits_{i=1}^N\Cov(\hat y_i,y_i)\tag{3.60}\label{3.60}
@@ -3733,7 +3733,7 @@ R(\beta)=\frac{1}{2}\Vert\mathbf y-\mathbf X\beta\Vert_2^2+\lambda\Vert\beta\Ver
 这里 $\Cov(\hat y_i,y_i)$ 指的是预测值 $\hat y_i$ 和其对应的输出向量 $y_i$ 之间的协方差．直观上看有意义：当拟合数据越困难，协方差会越大，从而 $\df(\hat{\mathbf y})$ 越大．表达式 \eqref{3.60} 是一个有用的自由度的概念，可以应用到任何模型的预测向量 $\hat{\mathbf y}$．其中包括那些对训练数据自适应拟合的模型．这个定义将在 <a href="../../07-Model-Assessment-and-Selection/7.6-The-Effective-Number-of-Parameters/index.html">7.4-7.6 节</a> 中进一步讨论．</p>
 <p>现在对于有 $k$ 个固定预测变量的线性回归模型，可以简单地证明 $\df(\hat{\mathbf y})=k$．同样地，对于岭回归，这一定义导出表达式（3.50）的 <strong>闭型解 (closed-form)</strong>：$\df(\hat{\mathbf{y}})=\tr(\mathbf S_\lambda)$．</p>
 <p>在这些情况下，\eqref{3.60} 可以很简单地进行赋值因为 $\hat{\mathbf{y}}=\mathbf{H}_\lambda\mathbf y$ 关于 $\mathbf y$ 是线性的．如果我们考虑在大小为 $k$ 的最优子集选择中的定义 \eqref{3.60}，似乎显然有 $\df(\hat{\mathbf y})$ 会大于 $k$，并且可以通过运用模拟的方法直接地估计 $\Cov(\hat y_i,y_i)/\sigma^2$ 来验证．然而估计最优子集选择的 $\df(\hat{\mathbf y})$ 没有闭型解．</p>
-<p>对于 LAR 和 lasso，会发生很奇怪的事情．这些技巧的自适应方式比最优集选择更加光滑，因此估计自由度会更加地难以驾驭．特别地，可以证明经过 $k$ 步 LAR 过程，拟合向量的有效自由度恰巧是 $k$．对于 lasso，（改进的）LAR 过程经常需要多余 $k$ 的步骤，因为可以删去预测变量．因此，定义有点不一样；对于 lasso，在任一小步 $\df(\hat{\mathbf y})$ 近似等于模型中预测变量的个数．然而这种近似在 lasso 路径中的任何地方都表现得很好，但是对于每个 $k$，它在包含 $k$ 个预测变量的序列中最后一个模型表现得最好．关于 lasso 自由度详细的研究或许可以在 Zou et al. (2007)<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup> 中找到．</p>
+<p>对于 LAR 和 lasso，会发生很奇怪的事情．这些技巧的自适应方式比最优集选择更加光滑，因此估计自由度会更加地容易驾驭．特别地，可以证明经过 $k$ 步 LAR 过程，拟合向量的有效自由度恰巧是 $k$．对于 lasso，（改进的）LAR 过程经常需要多余 $k$ 的步骤，因为可以删去预测变量．因此，定义有点不一样；对于 lasso，在任一小步 $\df(\hat{\mathbf y})$ 近似等于模型中预测变量的个数．然而这种近似在 lasso 路径中的任何地方都表现得很好，但是对于每个 $k$，它在包含 $k$ 个预测变量的序列中最后一个模型表现得最好．关于 lasso 自由度详细的研究或许可以在 Zou et al. (2007)<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup> 中找到．</p>
 <div class="footnote">
 <hr />
 <ol>
@@ -3861,7 +3861,7 @@ R(\beta)=\frac{1}{2}\Vert\mathbf y-\mathbf X\beta\Vert_2^2+\lambda\Vert\beta\Ver
         <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
         -->
-        Last Build Date UTC : 2025-04-29 23:07:20
+        Last Build Date UTC : 2025-09-23 13:45:14
       </div>
       
         
