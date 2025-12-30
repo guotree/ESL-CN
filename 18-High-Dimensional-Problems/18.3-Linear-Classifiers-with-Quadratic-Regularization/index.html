@@ -3323,7 +3323,7 @@
 </tr>
 <tr>
 <td>更新</td>
-<td>2019-08-17 17:45:41</td>
+<td>2025-12-30</td>
 </tr>
 <tr>
 <td>状态</td>
@@ -3336,7 +3336,7 @@
 <p>表 18.1 显示了通过 $8$ 个不同的分类方法得到的预测结果．每个病人的数据首先经过标准化后使得均值为 $0$，方差为 $1$；这似乎提高了整个例子的预测正确性，表明每个基因表达谱的形状是很重要的，而不是表达的绝对水平．在每种情形中，选取正则参数使得交叉验证误差最小，并且展现了每个参数值的测试误差．当有多余一个的正则参数得到最小的交叉验证误差，报告该值对应的测试误差的平均值．</p>
 <p>RDA（正则判别分析），正则多元逻辑斯蒂回归，以及支持向量机是更复杂的方法，试图研究数据的多变量信息．我们依次描述每个方法，以及一系列正则化方法，包括 $L_1$ 和 $L_2$，以及两个都有的方法．</p>
 <h2 id="_1">正则化判别分析<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p><strong>正则化判别分析 (Regularized Discriminant Analysis, RDA)</strong> 在 <a href="../../04-Linear-Methods-for-Classification/4.3-Linear-Discriminant-Analysis/index.html">4.3.1 节</a>已经描述．线性判别分析涉及 $p\times p$ 类间协方差阵的逆．当 $p &gt;&gt; N$，该矩阵可以很大，秩至多为 $N &lt; p$，因此是奇异矩阵．RDA 克服了对类间协方差矩阵的估计 $\hat\Sigma$ 正则化的问题．这里我们采用一个将 $\hat\Sigma$ 收缩到其对角阵版本的 RDA：</p>
+<p><strong>正则化判别分析 (Regularized Discriminant Analysis, RDA)</strong> 在 <a href="../../04-Linear-Methods-for-Classification/4.3-Linear-Discriminant-Analysis/index.html">4.3.1 节</a>已经描述．线性判别分析涉及 $p\times p$ 类内协方差阵的逆．当 $p &gt;&gt; N$，该矩阵可以很大，秩至多为 $N &lt; p$，因此是奇异矩阵．RDA 克服了对类间协方差矩阵的估计 $\hat\Sigma$ 正则化的问题．这里我们采用一个将 $\hat\Sigma$ 收缩到其对角阵版本的 RDA：</p>
 <p>
 <script type="math/tex; mode=display">
 \hat\Sigma(\gamma) = \gamma\hat\Sigma + (1-\gamma) \diag(\hat\Sigma), \;\text{with}\; \gamma\in [0,1]\tag{18.9}\label{18.9}
@@ -3403,7 +3403,7 @@ ASR(\{\theta_\ell,\beta_\ell\}^L_{\ell=1})=\frac 1N\sum\limits_{\ell=1}^L\Big[\s
 <p class="admonition-title">weiya 注：Recall</p>
 <p>
 <script type="math/tex; mode=display">
-min\;\Vert\beta\Vert\qquad s.t.\;\left\{\begin{array}{ll}y_i(x_i^T\beta+\beta_0)\ge 1-\xi_i\;\forall i,\\
+\min\;\Vert\beta\Vert\qquad s.t.\;\left\{\begin{array}{ll}y_i(x_i^T\beta+\beta_0)\ge 1-\xi_i\;\forall i,\\
 \xi_i\ge 0,\sum\xi_i\le constant.\end{array}\right.\tag{12.7}\label{12.7}
 </script>
 </p>
@@ -3621,7 +3621,7 @@ s.t.& \xi_i\ge 0,y_i(x_i^T\beta+\beta_0)\ge 1-\xi_i,\forall i
         <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
         -->
-        Last Build Date UTC : 2025-12-30 11:21:39
+        Last Build Date UTC : 2025-12-30 11:31:23
       </div>
       
         
