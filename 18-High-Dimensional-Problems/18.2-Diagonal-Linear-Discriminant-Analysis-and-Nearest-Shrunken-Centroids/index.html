@@ -3214,7 +3214,7 @@
 </tr>
 <tr>
 <td>更新</td>
-<td>2019-08-17 11:41:10</td>
+<td>2025-12-30</td>
 </tr>
 <tr>
 <td>状态</td>
@@ -3251,7 +3251,7 @@ C(x^*)=\ell\text{ if } \delta_{\ell}(x^*)=\max_k\delta_k(x^*)\tag{18.3}
     \eqref{18.2} 也假设了每个类别的特征有相同的方差？不然应该会有 $\log \vert \Sigma_k\vert$ 这一项。
 -->
 
-<p>对角 LDA 分类器在高维设定中通常很有效．在 Bickel and Levina(2004)<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> 等人的工作中称为 <strong>独立规则(independent rule)</strong>，理论上证明了在高维问题中经常比标准线性回归表现要好．这里对角 LDA 分类器在 20 个测试样本中产生 5 个误分类误差．这种对角 LDA 分类器的缺点是要使用所有的特征（基因），因此对于解释不是很方便．进一步正则化，我们可以做得更好——不管是测试误差还是解释性．</p>
+<p>对角 LDA 分类器在高维设定中通常很有效．在 Bickel and Levina(2004)<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> 等人的工作中称为 <strong>独立规则(independent rule)</strong>，理论上证明了在高维问题中经常比标准线性判别分析表现要好．这里对角 LDA 分类器在 20 个测试样本中产生 5 个误分类误差．这种对角 LDA 分类器的缺点是要使用所有的特征（基因），因此对于解释不是很方便．进一步正则化，我们可以做得更好——不管是测试误差还是解释性．</p>
 <p>我们想通过某种方式自动去掉对类别预测不再起作用的项来正则化．为了实现这一点，我们分别对每个特征，将每个类的均值收缩到整体均值．这可以得到 <strong>最近重心分类器 (nearest centroid classifier)</strong> 的正则化版本，或者等价为对角协方差形式的 LDA 的正则化版本．我们称这个过程为 <strong>最近收缩重心 (nearest shrunken centroids, NSC)</strong>．</p>
 <p>收缩过程按如下定义．令</p>
 <p>
@@ -3425,7 +3425,7 @@ d_{kj}'=d_{kj}\cdot I(\vert d_{kj}\vert\ge \Delta)\tag{18.6}
         <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
         -->
-        Last Build Date UTC : 2025-09-23 13:45:19
+        Last Build Date UTC : 2025-12-30 11:21:39
       </div>
       
         
